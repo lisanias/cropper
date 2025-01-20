@@ -77,7 +77,7 @@ class Cropper
      * @param int|null $height
      * @return null|string
      */
-    public function make(string $imagePath, int $width, int $height = null): ?string
+    public function make(string $imagePath, int $width, int|null $height = null): ?string
     {
         if (!file_exists($imagePath)) {
             return "Image not found";
@@ -99,7 +99,7 @@ class Cropper
      * @param int|null $height
      * @return string|null
      */
-    private function image(int $width, int $height = null): ?string
+    private function image(int $width, int|null $height = null): ?string
     {
         $imageWebP = "{$this->cachePath}/{$this->imageName}.webp";
         $imageExt = "{$this->cachePath}/{$this->imageName}." . pathinfo($this->imagePath)['extension'];
@@ -121,7 +121,7 @@ class Cropper
      * @param int|null $height
      * @return string
      */
-    protected function name(string $name, int $width = null, int $height = null): string
+    protected function name(string $name, int|null $width = null, int|null $height = null): string
     {
         $filterName = mb_convert_encoding(htmlspecialchars(mb_strtolower(pathinfo($name)["filename"])), 'ISO-8859-1',
             'UTF-8');
@@ -154,7 +154,7 @@ class Cropper
      * @example $t->flush("images/image.jpg"); clear image name and variations size
      * @example $t->flush(); clear all image cache folder
      */
-    public function flush(string $imagePath = null): void
+    public function flush(string|null $imagePath = null): void
     {
         foreach (scandir($this->cachePath) as $file) {
             $file = "{$this->cachePath}/{$file}";
@@ -171,7 +171,7 @@ class Cropper
      * @param int|null $height
      * @return null|string
      */
-    private function imageCache(int $width, int $height = null): ?string
+    private function imageCache(int $width, int|null $height = null): ?string
     {
         list($src_w, $src_h) = getimagesize($this->imagePath);
         $height = ($height ?? ($width * $src_h) / $src_w);
