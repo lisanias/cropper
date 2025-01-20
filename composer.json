@@ -1,6 +1,6 @@
 {
   "name": "coffeecode/cropper",
-  "description": "It is a easy and simple PHP image cropper and cache thumb manager",
+  "description": "Fork of coffeecode/cropper updating for php 8.4. It is a easy and simple PHP image cropper and cache thumb manager",
   "keywords": [
     "CoffeeCode",
     "Upload",
@@ -16,13 +16,16 @@
   "license": "MIT",
   "authors": [
     {
-      "name": "Robson V. Leite",
+      "name": [
+        "Robson V. Leite",
+        "Lisanias V. Loback"
+      ], 
       "email": "cursos@upinside.com.br",
       "role": "Developer"
     }
   ],
   "require": {
-    "php": ">=8.0",
+    "php": ">=8.4",
     "ext-gd": "*",
     "ext-mbstring": "*",
     "ext-fileinfo": "*",
