@@ -16,16 +16,13 @@
   "license": "MIT",
   "authors": [
     {
-      "name": [
-        "Robson V. Leite",
-        "Lisanias V. Loback"
-      ], 
+      "name": "Robson V. Leite",
       "email": "cursos@upinside.com.br",
       "role": "Developer"
     }
   ],
   "require": {
-    "php": ">=8.4",
+    "php": ">=8.0",
     "ext-gd": "*",
     "ext-mbstring": "*",
     "ext-fileinfo": "*",
